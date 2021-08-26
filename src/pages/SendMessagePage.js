@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { prepare, request, getResult } from 'klip-sdk'
 import Spinner from '../components/Spinner';
+import Button from '../components/Button';
+import './SendMessagePage.scss'
 
 export default function SendMessagePage() {
   const [SEND_REQUEST, SHOW_LOADING, SHOW_RESULT] = [1, 2, 3]
@@ -51,20 +53,18 @@ export default function SendMessagePage() {
   }
 
   return (
-    <div>
+    <div className='send-message-page'>
       {step === SEND_REQUEST &&
         (<>
-          <div>후원 메시지를 적어주세요</div>
+          <div className='title'>후원 메시지를 적어주세요</div>
           <input type="text" onChange={(e) => setMessage(e.target.value)} />
-          <button
-            onClick={sendPrepareRequest}
-          >후원 메시지 보내기</button>
+          <Button onClick={sendPrepareRequest}>후원 메시지 보내기</Button>
         </>)}
       {step === SHOW_LOADING && (
         <Spinner />
       )}
       {step === SHOW_RESULT && (
-        <div> 후원 메시지를 보냈습니다!</div>
+        <div className='result'> 후원 메시지를 보냈습니다!!</div>
       )}
     </div>
   )

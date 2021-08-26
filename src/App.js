@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header onClick={() => setShowSendMessagePage(!showSendMessagePage)}>
-        {showSendMessagePage ? '후원 KLAY 보내기' : '후원 메시지 보내기'}
+        {showSendMessagePage ? '후원 KLAY 보내기 ➤' : '후원 메시지 보내기 ➤'}
       </header>
       <main>
         {showSendMessagePage ?
