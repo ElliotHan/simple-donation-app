@@ -10,7 +10,6 @@ export default function SendMessagePage() {
   const [step, setStep] = useState(SEND_REQUEST)
   const [message, setMessage] = useState("")
 
-
   const sendPrepareRequest = async () => {
     const bappName = '후원하기 앱'
     const to = '0x2200164c4d78bc4e5e3CCAFA3bc7E006d345f3C0'
@@ -33,7 +32,6 @@ export default function SendMessagePage() {
     )
     const params = `[\"${message}\"]`
     const res = await prepare.executeContract({ bappName, to, value, abi, params })
-    console.log(res.request_key);
 
     if (res.request_key) {
       setStep(SHOW_LOADING)
@@ -64,7 +62,12 @@ export default function SendMessagePage() {
         <Spinner />
       )}
       {step === SHOW_RESULT && (
-        <div className='result'> 후원 메시지를 보냈습니다!!</div>
+        <div className='result'>
+          <img src="https://klipwallet.com/img/home-klip-user-guide-event.png" />
+          <div className='message'>
+            후원 메시지가<br /> 블록체인에 기록되었습니다!!
+        </div>
+        </div>
       )}
     </div>
   )

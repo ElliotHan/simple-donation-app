@@ -1,18 +1,24 @@
 .donate-page {
+  font-weight: 900;
   .title {
     margin: 120px 0 50px 0;
     font-size: 30px;
-    font-weight: 900;
   }
   .address {
     text-align: center;
     line-break: anywhere;
     margin: 60px;
-    font-size: 25px;
+    font-size: 24px;
+    font-weight: 500;
   }
   .result {
     margin-top: 200px;
     font-size: 20px;
-    font-weight: 500;
+    img {
+      width: 300px;
+    }
+    .message {
+      margin-top: 20px;
+    }
   }
 }

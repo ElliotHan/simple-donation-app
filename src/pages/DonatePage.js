@@ -45,7 +45,12 @@ export default function DonatePage() {
         <Spinner />
       )}
       {step === SHOW_RESULT && (
-        <div className='result'> 후원이 완료되었습니다!!</div>
+        <div className='result'>
+          <img src="https://klipwallet.com/img/home-klip-user-guide-event.png" />
+          <div className='message'>
+            후원이 완료되었습니다!!
+          </div>
+        </div>
       )}
     </div>
   )
